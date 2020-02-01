@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<form method="post" action="/update/{{product.id}}" enctype="multipart/form-data">
+	{% csrf_token %}
+	<input type="text" value="{{product.name}}" name="name">
+	<input type="text" value="{{product.price}}" name="price">
+	<input type="text" value="{{product.category}}" name="category">
+	{% load static %}
+	<img width="50px" src="{% static '/images/' %}{{product.image}}">
+
+	<button type="submit">Submit</button>
+
+</form>
+{% endblock content %}
