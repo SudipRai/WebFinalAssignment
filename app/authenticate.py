@@ -21,7 +21,7 @@ class AuthenticateC:
 		def wrap(request):
 			try:
 				# User.objects.get(email=request.session['email'])
-				Customer.objects.get(Q(password=request.session['password']) & Q(email=request.session['email']))
+				Customer.objects.get(Q(password=request.session['password']) & Q(name=request.session['name']))
 				return function (request)
 			except:
 				messages.warning(request,"Invalid email or password")

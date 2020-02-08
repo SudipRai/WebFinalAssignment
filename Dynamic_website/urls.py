@@ -20,12 +20,16 @@ from app.views import customerviews
 from app.views import adminviews
 
 urlpatterns = [
+
     path('home',productviews.home),
+  
     path('srch',productviews.search),
     path('',productviews.index),
     path('edit/<int:id>',productviews.edit),
-    path('update/<int:id>',productviews.update),
+    path('customeredit/<int:id>',customerviews.edit),
+    path('customerupdate/<int:id>',customerviews.update),
     path('delete/<int:id>',productviews.delete),
+    path('deletecustomer/<int:id>',customerviews.delete),
     path('create',productviews.create),
     path('signup',customerviews.create),
     path('customerdetail',customerviews.index),
@@ -34,6 +38,10 @@ urlpatterns = [
     path('adminlogin',adminviews.login),
     path('entry',adminviews.entry), 
     path('entryhome',customerviews.entry),
-    path('login',customerviews.login),  
+    path('login',customerviews.login), 
+    path('logout',customerviews.logout),
+     path('logoutadmin',adminviews.logout),
+    path('profile/<str:name>',customerviews.profile), 
+    path('Shop',customerviews.shop),
 
 ]

@@ -5,8 +5,13 @@ from app.authenticate import Authenticate,AuthenticateC
 from django.http import HttpResponse,JsonResponse
 # Create your views here.def index(request):
 
+
+
 def home(request):
-	return render(request,"home.html")
+	products=Product.objects.all()
+	return render(request,"hometemplate.html",{'products':products})
+
+
 
 
 @Authenticate.valid_user

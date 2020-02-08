@@ -44,8 +44,9 @@
 				success:function(data){
 					console.log(data);
 					$("tr").not("tr:first").remove();
-					var html="";
+					
 					for(d of data){
+						var html="";
 						html+="<tr>";
 							html+="<td>"+d.id+"</td>";
 							html+="<td><img class'rounded width='80' src='{% static '/images/' %}"+d.image+"' /></td>";

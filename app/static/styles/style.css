@@ -1,39 +1,33 @@
-
 *{
 	margin: 0;
 	padding: 0;
 }
 body{
 	font-family: sans-serif;
-	background: #CCCCCC !important;
+	
 	height: 100% !important;
 }
-
-
 .container-fluid{
 	overflow: hidden;
 	width: 100%;
 	margin: auto;
-
-	
-}
+	box-shadow: 0px 0px 4px 0px rgba(0,0,0,1);
+	}
+/*-----------------Navigation Bar-------------------*/
 .top-nav-bar{
-	height: 57px;
+	height: 70px;
 	top:0;
 	position: sticky;
 	background: #fff;
 	margin-bottom: 20px;
 	z-index: 2;
 	border-bottom: 1px solid black;
-	
-
-
 }
 h1{
 	margin-left: 10px;
-	
 	color:#2B7A78;
 }
+
 .Search{
 	margin-top: 9px;
 	
@@ -210,25 +204,23 @@ cursor: pointer;
 	}
 }
 
-
+/*---------------Slider---------------*/
 .main-slider{
 	width: 80%;
 	float: right;
 	padding:0x 10px;
 	background: #fff;
 	display: inline-flex;
-}
-
+	}
 .slider
 {
-	margin: 5px;
+	margin: 10px;
 	width: 65%;
+	box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.5);
 	height: 450px;
 }
 .carousel{
 	box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.5);
-
-
 }
 .carousel-item img{
 	height: 450px;
@@ -259,18 +251,21 @@ cursor: pointer;
 	padding: 10px;
 	width: 23%;
 	box-sizing: border-box;
+	box-shadow: 1px 1px 4px 1px rgba(0,0,0,1);
 
 }
 .trending img{
 	height: 180px;
 	width: 200px;
-	margin: 2%;
+	margin: 3%;
+	margin-left: 15%;
 }
 .btn-success{
 	margin-left: 30%;
 	margin-top: 2%;
 }
 .trending h2{
+	text-align: center;
 	border-bottom: 2px solid green;
 }
 .trending p{
@@ -285,7 +280,7 @@ cursor: pointer;
 
 .featured-categories
 {
-	margin-top: 5%;
+	margin-top: 1%;
 	width: 100%;
 	padding: 20px 0;
 	transition: 1s;
@@ -301,10 +296,10 @@ cursor: pointer;
 	width: 80%;
 }
 .featured-categories img{
-	margin: 10px 0;
+	margin: 30px 0;
 	width: 300px;
 	height: 200px;
-	box-shadow: 1px 1px 4px 1px rgba(0,0,0,1);
+	box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.5);
 }
 @media  only screen and (max-width:980px )
 {
@@ -369,6 +364,7 @@ margin:15px 0 15px 50px;
 }
 .website-features{
 	margin-top: 10px;
+	margin-left: 10%;
 }
 
 @media  only screen and (max-width:980px )
@@ -386,7 +382,7 @@ margin:15px 0 15px 50px;
 	color: #fff;
 }
 
-
+/*------------- Dashboard Design-----------------*/
 
 
 .dash{
@@ -395,6 +391,7 @@ margin:15px 0 15px 50px;
 .btn-primary{
 	float: right !important;
 	margin: 10px !important;
+	background-color: black !important;
 }
 #srch{
 	margin-left: 20%;
@@ -449,7 +446,7 @@ label
 	margin-top: 12px;
 	text-align: center;
 	letter-spacing: 0em;
-	color: #1C9344;
+	color: black;
 
 }
 
@@ -459,8 +456,11 @@ label
 }
 
 .dash-sidebar .list-group .active a{
-
 	color: white;
+}
+.dash-sidebar .list-group .active{
+	background-color: black;
+	border-color: black;
 }
 #page{
 	width: 40px;
@@ -472,18 +472,19 @@ label
 #prev, #next{
 	width: 60px;
 	height: 50px;
-	background-color: #0E69D6;
+	background-color: black;
 	color: white;
 	cursor: pointer;
 }
 
 .login
 {
-	margin-top: 10%;
+	margin-top: 5%;
 	margin-left: 30%;
 	background-color: white !important;
 	box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.8);
 	padding: 20px;
+	margin-bottom: 5%;
 }
 #logout{
 	float: right !important;
