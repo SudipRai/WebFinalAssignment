@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<a href="/admin" class="btn btn-primary">Add User</a>
+<table class="table" id="table">
+	<tr>
+		<thead>
+			<th>ID</th>
+			<th>IMAGE</th>
+			<th>NAME</th>
+			<th>EMAIL</th>
+			<th>PASSWORD</th>
+		</thead>
+	</tr>
+{% for user in users %}
+	<tr>
+		<tbody>
+			<td>{{user.id}}</td>
+			{% load static %}
+			<td><img width="50" src="{% static '/images/' %}{{user.image}}"/></td>
+			<td>{{user.name}}</td>
+			<td>{{user.email}}</td>
+			<td>{{user.password}}</td>
+		</tbody>
+	</tr>
+{% endfor %}
+</table>
+<script>
+	$(".dash-sidebar").find("active").removeClass("");
+		$("#admin-detail").addClass("active");
+</script>
+{% endblock content %}
