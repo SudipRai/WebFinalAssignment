@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
-from app.models.products import Customer
-from app.models.products import Product
+from app.models.models import Customer
+from app.models.models import Product
 from app.forms.customerforms import CustomerForm
 from django.http import HttpResponse
 from app.authenticate import Authenticate,AuthenticateC
@@ -58,6 +58,6 @@ def edit(request,id):
 
 def update(request,id):
 	customer=Customer.objects.get(id=id)
-	form=CustomerForm(request.POST,request.FILES,instance=customer)
+	form=CustomerForm(request.POST,instance=customer)
 	form.save()
-	return redirect('/home')
+	return redirect('/Shop')

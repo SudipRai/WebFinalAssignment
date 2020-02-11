@@ -1,0 +1,44 @@
+<!-- /*-------- This the Product Page-----------*/ -->
+
+{% extends "home.html" %}
+{% load static %}
+{% block content %}
+<section class="on-sale">
+		<div class="container">
+			<div class="title-box">
+				<h2>On Sale</h2>
+			</div>
+			<div class="row">
+				{% for product in products %}
+				<div class="col-md-3">
+					<div class="product-top">
+						<img width="300" height="200" src="{% static '/images/' %}{{product.image}}">
+						<div class="overlay-right">
+						<button type="button" class="btn btn-secondary" title="Quick Shop"><i class="fa fa-eye"></i></button> 
+						<button type="button" class="btn btn-secondary" title="Add to Wishlish"><i class="fa fa-heart"></i></button> 
+						<button type="button" class="btn btn-secondary" title="Add to Cart"><a href="/order/{{product.id}}/{{request.session.name}}"><i class="fa fa-shopping-cart"></i></a></button> 
+					</div>
+					</div>
+					<div class="product-bottom text-center">
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<h3>{{product.name}}</h3>
+						<h5>${{product.price}}</h5>
+					</div>
+					
+				</div>
+				{% endfor %}
+				</div>
+			</div>
+		
+	</section>
+	<script>
+		
+	    	$(".menu").find("active").removeClass("");
+			$("#product").addClass("active");
+		
+</script>
+	{% endblock content %}

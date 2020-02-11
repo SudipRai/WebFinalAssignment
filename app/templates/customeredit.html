@@ -1,0 +1,94 @@
+<!-- /*----------------Edit Customer Detail------------------*/ -->
+
+{% extends "home.html" %}
+{% load static %}
+{% block content %}
+	<form method="post" action="/customerupdate/{{customer.id}}">
+		{% csrf_token %}
+     
+		<div class="container">
+	<div class="">
+		<img  src="{% static 'image/profile.PNG' %}" class="rounded-circle">
+	</div>
+
+		
+	<div class="col-md-8">
+    	<div class="row">
+			<div class="col-md-6">
+    			<label>User Id</label>
+    		</div>
+    		<div class="col-md-6">                                        
+    			<input type="text" value="{{customer.id}}" name="id">                                           
+    		</div>
+		</div>
+        <div class="row">
+            <div class="col-md-6">
+            	<label>Name</label>
+            </div>
+            <div class="col-md-6">
+             	<input type="text" value="{{customer.name}}" name="name">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+             	<label>Email</label>
+            </div>
+            <div class="col-md-6">
+            	<input type="text" value="{{customer.email}}" name="email">
+            </div>
+       	</div>
+        <div class="row">
+            <div class="col-md-6">
+            	<label>Passwoed</label>
+            </div>
+   			<div class="col-md-6">
+            	 <input  type="text" value="{{customer.password}}" name="password">
+             </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+             	<label>Address</label>
+            </div>
+            <div class="col-md-6">
+            	 <input type="text" value="{{customer.address}}" name="address">
+            </div>
+            </div>
+        <div class="row">
+            <div class="col-md-6">
+            	 <label>City</label>
+            </div>
+            <div class="col-md-6">
+             	<input type="text" value="{{customer.city}}" name="city"><
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+           		<label>State</label>
+            </div>
+            <div class="col-md-6">
+            	<input type="text" value="{{customer.state}}" name="state">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+           		<label>Zip Code</label>
+           </div>
+            <div class="col-md-6">
+             	<input type="text" value="{{customer.zipcode}}" name="zipcode">
+            </div>
+        </div>
+        <div class="col-md-4">
+        <button class="btn btn-info" type="submit">Save Info</button>
+        </div>                    
+    </div>
+</div>
+
+	
+
+</form>
+	
+
+{% endblock content %}
+
+		
+		

@@ -1,0 +1,90 @@
+<!-- /*----------This is yhe profile page of Customer--------------*/ -->
+
+
+{% extends "home.html" %}
+{% load static %}
+{% block content %}
+	<div class="container">
+	<div class="">
+		<img  src="{% static 'image/profile.PNG' %}" class="rounded-circle">
+	</div>
+
+		
+	<div class="col-md-8">
+    	<div class="row">
+			<div class="col-md-6">
+    			<label>User Id</label>
+    		</div>
+    		<div class="col-md-6">                                        
+    			<p>{{customer.id}}</p>                                           
+    		</div>
+		</div>
+        <div class="row">
+            <div class="col-md-6">
+            	<label>Name</label>
+            </div>
+            <div class="col-md-6">
+             	<p>{{customer.name}}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+             	<label>Email</label>
+            </div>
+            <div class="col-md-6">
+            	<p>{{customer.email}}</p>
+            </div>
+       	</div>
+        <div class="row">
+            <div class="col-md-6">
+            	<label>Passwoed</label>
+            </div>
+   			<div class="col-md-6">
+            	 <p>{{customer.password}}</p>
+             </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+             	<label>Address</label>
+            </div>
+            <div class="col-md-6">
+            	 <p>{{customer.address}}</p>
+            </div>
+            </div>
+        <div class="row">
+            <div class="col-md-6">
+            	 <label>City</label>
+            </div>
+           <div class="col-md-6">
+             	<p>{{customer.city}}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+           		<label>State</label>
+            </div>
+            <div class="col-md-6">
+            	<p>{{customer.state}}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+           		<label>Zip Code</label>
+           </div>
+            <div class="col-md-6">
+             	<p>{{customer.zipcode}}</p>
+            </div>
+        </div>                    
+                                                                                    
+    <div class="col-md-6">
+        <button class="btn btn-danger" name="btnAddMore"><a href="/customeredit/{{customer.id}}">Edit Profile</a>|<a href="/deletecustomer/{{customer.id}}">Delete Account</a></button>
+    
+    </div>
+    </div>
+</div>
+		<script>
+	    	$(".menu").find("active").removeClass("");
+			$("#profile").addClass("active");
+		</script>
+
+{% endblock content %}

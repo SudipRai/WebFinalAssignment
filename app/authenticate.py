@@ -1,10 +1,10 @@
 from django.shortcuts import redirect
-from app.models.products import User
-from app.models.products import Customer
+from app.models.models import User
+from app.models.models import Customer
 from django.contrib import messages
 from django.db.models import Q
 
-
+# /*------------Authentication to for Back-End------------------*/
 class Authenticate:
 	def valid_user(function):
 		def wrap(request):
@@ -16,6 +16,7 @@ class Authenticate:
 				messages.warning(request,"Invalid email or password")
 				return redirect('/adminlogin')
 		return wrap
+# /*----------------------Authentication for Front-end------------------------*/		
 class AuthenticateC:
 	def valid_customer(function):
 		def wrap(request):

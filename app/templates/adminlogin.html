@@ -1,4 +1,4 @@
-
+<!-- /*-----------Login Page for Admin-------------*/ -->
 {% load static %}
 
 <!DOCTYPE html>
@@ -14,30 +14,26 @@
   <meta charset="utf-8"/>
 
 </head>
-<body id="registerbody">
-<div class="col-md-4 login" >
-
-<form method="post" action="entry">
-
-  {% csrf_token %}
-
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
-  </div>
-  <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-info">Submit</button>
-
-
-
-</form>
-</div>
+<body>
+<div class="col-md-6 container form">
+  <h2>Admin Login</h2>
+  <form action="entry" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="username">Email:</label>
+      <input type="text" class="form-control" id="email" placeholder="Enter email" name="email">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password">
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox" name="remember"> Remember me</label>
+    </div>
+    <button type="submit" class="btn btn-info">Submit</button>
+  </form>
+  {% for message in messages %}
+{{message}}
+{% endfor %}
+</div>  
 </body>

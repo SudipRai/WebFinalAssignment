@@ -1,69 +1,56 @@
+<!-- /*------Registration Form---------*/ -->
+
 {% extends "home.html" %}
 {% load static %}
 {% block content %}
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<title> Register</title>
-	<link rel="stylesheet" type="text/css" href="{% static 'styles/style.css' %}">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" ></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
-	<meta charset="utf-8"/>
-
-</head>
-<body id="registerbody">
+<body >
 
 	
-	<div class="container form-cont">
-	<p id="logo">Sign Up</p>
-<form method="POST" action="/signup" enctype="multipart/form-data" id="registration">
+
+<form method="POST" action="/signup" enctype="multipart/form-data">
 								
 
    {% csrf_token %}
-   <div class="form-group">
-    <label for="inputName">Full Name</label>
-    <input type="text" class="form-control" id="inputName" placeholder="Enter Full Name" name="name">
+   <div class="container">
+    <h1>Register</h1>
+    <p>Please fill in this form to create an account.</p>
+    <hr>
+
+    <label for="username"><b>Full Name</b></label>
+    <input type="text" placeholder="Enter Name" name="name" required>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" required>
+    <label for="address"><b>Address</b></label>
+    <input type="text" placeholder="Enter Password" name="address" required>
+    <label for="city"><b>City</b></label>
+    <input type="text" placeholder="Enter Password" name="city" required>
+    <label for="state"><b>State</b></label>
+    <input type="text" placeholder="Enter Password" name="state" required>
+    <label for="zip"><b>Zip Code</b></label>
+    <input type="text" placeholder="Enter zip code" name="zipcode" required>
+    <hr>
+    <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+
+    <button type="submit" class="registerbtn">Register</button>
   </div>
-	<div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputEmail4">Email</label>
-      <input type="email" class="form-control" id="inputEmail4" placeholder="Email" name="email">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputPassword4">Password</label>
-      <input type="password" class="form-control" id="inputPassword4" placeholder="Password" name="password">
-    </div>
+  
+  <div class="container signin">
+    <p>Already have an account? <a href="/login">Sign in</a>.</p>
   </div>
-  <div class="form-group">
-    <label for="inputAddress">Address</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="" name="address">
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputCity">City</label>
-      <input type="text" class="form-control" id="inputCity" name="city">
-    </div>
-    <div class="form-group col-md-4">
-      <label for="inputState">State</label>
-     <input type="text" class="form-control" id="inputState" name="state">
-    </div>
-    <div class="form-group col-md-2">
-      <label for="inputZip">Zip</label>
-      <input type="text" class="form-control" id="inputZip" name="zipcode">
-    </div>
-  </div>
-  <button type="submit" class="btn btn-info">Create Account</button>
-  <p>Already have an account?<a href="/login">Login</a></p>
-  <p id="pre">By creating an Account, you agree to our Privacy and Policy. </p>
-  <p id="logo">GADGET'X'</p>
-  <p id="pre">&copy; Copyright Gadget-X</p>
 </form>
 
-</div>
+
+
 </body>
 </html>
+<script>
+    
+        $(".menu").find("active").removeClass("");
+      $("#signup").addClass("active");
+    
+</script>
 {% endblock content %}

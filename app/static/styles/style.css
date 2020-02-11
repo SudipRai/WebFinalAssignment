@@ -11,7 +11,6 @@ body{
 	overflow: hidden;
 	width: 100%;
 	margin: auto;
-	box-shadow: 0px 0px 4px 0px rgba(0,0,0,1);
 	}
 /*-----------------Navigation Bar-------------------*/
 .top-nav-bar{
@@ -23,13 +22,21 @@ body{
 	z-index: 2;
 	border-bottom: 1px solid black;
 }
+.topcont{
+	margin-top: 2%;
+	box-shadow: 1px 1px 4px 1px rgba(0,0,0,1);
+}
 h1{
 	margin-left: 10px;
 	color:#2B7A78;
 }
+.btn-danger a{
+	color: white;
+	text-decoration: none;
+}
 
-.Search{
-	margin-top: 9px;
+#search{
+	margin-top: 8px;
 	
 	margin-left: 30px;
 	border: 2px solid orange !important;
@@ -50,15 +57,21 @@ h1{
 	cursor: pointer;
 
 }
+.form{
+	margin-top: 5%;
+	margin-bottom: 3%;
+	box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.5);
+	padding: 20px;
+}
 .search-box{
 	display: inline-flex;
-	width: 60%;
+	width: 43%;
 }
 .fa-search{
 	color: #fff;
 }
 .menu{
-	width: 35%;
+	width: 50%;
 	height: 57px;
 	float: right;
 	margin-right: 5%;
@@ -69,7 +82,7 @@ h1{
 }
 .menu ul li{
 list-style-type: none;
-padding: 15px 25px;
+padding: 15px 15px;
 text-align: center;
 cursor: pointer;
 }
@@ -211,16 +224,18 @@ cursor: pointer;
 	padding:0x 10px;
 	background: #fff;
 	display: inline-flex;
+	box-shadow: 1px 1px 4px 1px rgba(0,0,1,0);
+
 	}
 .slider
 {
 	margin: 10px;
 	width: 65%;
-	box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.5);
+	
 	height: 450px;
 }
 .carousel{
-	box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.5);
+	
 }
 .carousel-item img{
 	height: 450px;
@@ -307,6 +322,11 @@ cursor: pointer;
 	width: 80%;
 	margin-left: 7%;
 }
+.dash-sidebar{
+
+	height: auto !important;
+
+}
 
 }
 
@@ -382,7 +402,75 @@ margin:15px 0 15px 50px;
 	color: #fff;
 }
 /*-----------------------Profile page design-------------------------*/
+.profile-userpic img{
+width: 140px;
+height: 100px;
+margin:5% 0 10% 30%;
+border: 1px solid black;
+}
+.profile{
+	box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.8);
+	
+	margin:30px 500px;
+	padding: 10px;
 
+}
+.profile p{
+	font-size: 20px;
+	margin-left: 30px;
+
+}
+.profile pre{
+	font-size: 25px;
+	font-weight: bold;
+}
+.pro{
+	display: flex;
+	border: 1px solid #9B9E9D;
+	padding: 10px;
+}
+@media  only screen and (max-width:980px ){
+	.profile{
+		margin-left: 0px;
+	}
+	
+}
+.btn-success a{
+	text-decoration: none !important;
+	color: white;
+}
+.btn-success{
+	cursor: pointer;
+	box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.8);
+	border: none;
+	outline: none;
+	border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  outline: none;
+}
+.btn-success:hover{
+	background-color: #3e8e41
+	color:white !important;
+}
+.feature{
+	padding: 15px;
+}
+.menu .active a{
+	color: #2B7A78;
+}
+#welcome{
+	color: #0CAB13;
+}
+.order{
+	height: 500px;
+	box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.8);
+	margin:30px;
+	padding: 40px;
+}
+.orderrow{
+	padding: 30px;
+}
 
 /*------------- Dashboard Design-----------------*/
 
@@ -407,19 +495,14 @@ margin:15px 0 15px 50px;
 }
 .dash-sidebar{
 	padding: 0px !important;
-	height: 700px !important;
+	height: 700px;
 	border: 1px solid #626567;
 	background-color: white !important;
 }
 #id_name{
 	width: 200px;
 }
-#registration{
-	padding: 10px;
-	margin-top: 40px;
-	height: 600px;
 
-}
 #logo{
 	text-align: center;
 	font-size: 48px;
@@ -490,4 +573,50 @@ label
 }
 #logout{
 	float: right !important;
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+
+.registerbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+
+a {
+  color: dodgerblue;
+}
+ 
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
 }

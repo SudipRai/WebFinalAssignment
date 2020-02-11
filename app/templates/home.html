@@ -1,3 +1,5 @@
+<!-- /*--------This is the layout of home page---------*/ -->
+
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +15,7 @@
 
 </head>
 <body>
+	<!-- /*------------Navigation Bar------------*/ -->
 		<div class="container-fluid">
 			<div class="top-nav-bar">
 	
@@ -22,22 +25,23 @@
 					<h1>GADGET'X'</h1>
 					
 					<input type="text" id="search" class="form-control Search" placeholder="What are you looking for....">
-					<span class="input-group-text"><i class="fa fa-search" aria-hidden=True></i></span>
+					
 				</div>
 				<div class="menu">
 					<ul>
-						<li><a href="/home">Home</a></li>
-						<li><a href="/Shop">Product</a></li>
+						<li id="home"><a href="/home">Home</a></li>
+						<li id="product"><a href="/Shop">Product</a></li>
 						{% if request.session.name %}
-						<li><p><b> Welcome, {{request.session.name}}</b></p></li>
+						<li><p id="welcome"><b> Hi, {{request.session.name}}</b></p></li>
 						<li><a href="/logout">Logout</a></li>
+						<li id="mycart"><a href="/mycart/{{request.session.name}}">My Cart</a></li>
 						
-						<li><a href="/profile/{{request.session.name}}">Profile</a></li>
+						<li id="profile"><a href="/profile/{{request.session.name}}">Profile</a></li>
 						
 
 						{% else %}
 						<li> <a id="botn" href="/login"><i class="fa fa-user-plus" aria-hidden=True></i> Login</a></li>
-						<li><a href="/signup">SignUp</a></li>
+						<li id="signup"><a href="/signup">SignUp</a></li>
 						{% endif %}
 						
 					</ul>
@@ -47,6 +51,8 @@
 		{% block content %}
 
 		{% endblock content %}
+
+		<!-- /*------------Footer------------*/ -->
 	<div class="jumbotron text-center" style="margin-bottom:0">
   <div class="row">
   	<div class="col-md-6">

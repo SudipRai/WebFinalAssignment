@@ -1,21 +1,11 @@
 from django.shortcuts import render,redirect
-from app.models.products import Product
+from app.models.models import Product
 from app.forms.productforms import ProductForm
 from app.authenticate import Authenticate,AuthenticateC
 from django.http import HttpResponse,JsonResponse
 # Create your views here.def index(request):
 
-
-
-def home(request):
-	products=Product.objects.all()
-	return render(request,"hometemplate.html",{'products':products})
-
-
-
-
 @Authenticate.valid_user
-
 def index(request):
 	limit=3
 	page=1
@@ -32,13 +22,18 @@ def index(request):
 	return render(request,"index.html",{'products':products,'page':page})
 
 
+	
 def search(request):
 	products=Product.objects.filter(name__contains=request.GET['srch']).values()
 	return JsonResponse(list(products),safe=False)
 
 
-def create(request):
 
+
+
+
+@Authenticate.valid_user
+def create(request):
 	if request.method=="POST":
 		form=ProductForm(request.POST,request.FILES)
 		form.save()
@@ -66,3 +61,7 @@ def delete(request,id):
 	product=Product.objects.get(id=id)
 	product.delete()
 	return redirect('/')
+
+def home(request):
+	products=Product.objects.all()
+	return render(request,"hometemplate.html",{'products':products})
