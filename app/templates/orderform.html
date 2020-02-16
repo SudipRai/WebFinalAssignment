@@ -1,0 +1,47 @@
+
+{% extends "home.html" %}
+{% load static %}
+{% block content %}
+<div class="container order">
+<form method="post" action="/addorder" enctype="multipart/form-data">
+	{% csrf_token %}
+    <h1>Add To Cart</h1>
+	<div class="row orderrow">
+			<div class="col-md-6">
+    			<label>Product Id</label>
+    		</div>
+    		<div class="col-md-6">                                        
+    			<input type="text" value="{{product.id}}" name="productid">                                           
+    		</div>
+		</div>
+    <div class="row orderrow">
+            <div class="col-md-6">
+            	<label>Customer Name</label>
+            </div>
+            <div class="col-md-6">
+             	<input type="text" value="{{request.session.name}}" name="customername">
+            </div>
+    </div>
+    <div class="row orderrow">
+            <div class="col-md-6">
+            	<label>Quantity</label>
+            </div>
+            <div class="col-md-6">
+             	<input type="text" value="1" name="quantity">
+            </div>
+    </div>
+    <div class="row orderrow">
+            <div class="col-md-6">
+            	<label>Order Date</label>
+            </div>
+            <div class="col-md-6">
+             	<input type="text" name="orderdate" required="">
+            </div>
+    </div>
+        <button class="btn btn-success" type="submit">Confirm Order</button>
+    
+
+
+</form>
+</div>
+{% endblock content %}

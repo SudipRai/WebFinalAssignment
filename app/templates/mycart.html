@@ -1,0 +1,33 @@
+{% extends "home.html" %}
+{% load static %}
+{% block content %}
+<table class="table" id="table">
+	<tr>
+		<thead>
+			<th>Order Id</th>
+			<th>Product Picture</th>
+			<th>Quantity</th>
+			<th>Date</th>
+			<th>Name</th>
+			<th>Price</th>
+			<th>Check Out</th>	
+			<th>Action</th>
+
+			</thead>	
+	</tr>
+	{% for order in orders %}
+	<tr>
+		<tbody>
+			<th>{{order.orderid}}</th>
+			<td><img width="200px" src="{% static '/images/' %}{{order.productid.image}}"></td>	
+			<td>{{order.quantity}}</td>
+			<td>{{order.orderdate}}</td>
+			<td>{{order.productid.name}}</td>
+			<td>{{order.productid.price}}</td>
+			<td><a href="/checkout/{{order.orderid}}">Check Out</a></td>
+			<td><a href="/deleteorder/{{order.orderid}}">Cancel Order</a></td>
+		</tbody>
+	</tr>
+	{% endfor %}
+</table>
+	{% endblock content %}

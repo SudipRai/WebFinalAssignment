@@ -99,39 +99,15 @@
 		<div class="container-fluid">
 			<h4 class="title-box">Our Product</h4>
 			<div class="row feature">
+			{% for product in products %}
 				<div class="col-md-3">
-					<img src="{% static 'image/analog.JPG' %}">
+					<img src="{% static '/images/' %}{{product.image}}">
 					<button type="button" class="btn btn-success"><a href="/Shop"> Shop Now</a></button>
 				</div>
-				<div class="col-md-3">
-					<img src="{% static 'image/note.JPG' %}">
-					<button type="button" class="btn btn-success"><a href="/Shop"> Shop Now</a></button>
-				</div>
-				<div class="col-md-3">
-					<img src="{% static 'image/bluetooth.JPG' %}">
-					<button type="button" class="btn btn-success"><a href="/Shop"> Shop Now</a></button>
-				</div>
-				<div class="col-md-3">
-					<img src="{% static 'image/s10.JPG' %}">
-					<button type="button" class="btn btn-success"><a href="/Shop"> Shop Now</a></button>
-				</div>
-				<div class="col-md-3">
-					<img src="{% static 'image/watches.JPG' %}">
-					<button type="button" class="btn btn-success"><a href="/Shop"> Shop Now</a></button>
-				</div>
-				<div class="col-md-3">
-					<img src="{% static 'image/speaker1.webp' %}">
-					<button type="button" class="btn btn-success"><a href="/Shop"> Shop Now</a></button>
-				</div>
-				<div class="col-md-3">
-					<img src="{% static 'image/camera1.JPG' %}">
-					<button type="button" class="btn btn-success"><a href="/Shop"> Shop Now</a></button>
-				</div>
-				<div class="col-md-3">
-					<img src="{% static 'image/laptop1.JPG' %}">
-					<button type="button" class="btn btn-success"><a href="/Shop"> Shop Now</a></button>
-				</div>
+				{% endfor %}
 			</div>
+			
+				
 		</div>
 	</section>
 	<!-- /*--------Website Feature----------*/ -->

@@ -27,18 +27,12 @@ def search(request):
 	products=Product.objects.filter(name__contains=request.GET['srch']).values()
 	return JsonResponse(list(products),safe=False)
 
-
-
-
-
-
 @Authenticate.valid_user
 def create(request):
 	if request.method=="POST":
 		form=ProductForm(request.POST,request.FILES)
 		form.save()
 		return redirect('/')
-
 
 	form=ProductForm()
 	return render(request,'create.html',{'form':form})

@@ -38,6 +38,7 @@ class User(models.Model):
 class Order(models.Model):
 	orderid=models.AutoField(auto_created=True,primary_key=True)
 	productid=models.ForeignKey(Product,on_delete=models.CASCADE)
+	
 	customername=models.CharField(max_length=100)
 	quantity=models.CharField(max_length=50)
 	orderdate=models.CharField(max_length=50)

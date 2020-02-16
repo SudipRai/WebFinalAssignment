@@ -25,6 +25,7 @@ urlpatterns = [
     path('srch',productviews.search),
     path('',productviews.index),
     path('edit/<int:id>',productviews.edit),
+    path('update/<int:id>',productviews.update),
     path('customeredit/<int:id>',customerviews.edit),
     path('customerupdate/<int:id>',customerviews.update),
     path('delete/<int:id>',productviews.delete),
@@ -46,5 +47,7 @@ urlpatterns = [
     path('addorder',orderviews.create),
     path('order/<int:id>/<str:name>',orderviews.orderdetail),
     path('mycart/<str:name>',orderviews.mycart),
-    path('deleteorder/<int:id>',orderviews.delete)
+    path('deleteorder/<int:id>',orderviews.delete),
+    path('checkout/<int:id>',orderviews.checkout),
+    path('deliver/<int:id>/<str:name>',orderviews.deliver),
 ]

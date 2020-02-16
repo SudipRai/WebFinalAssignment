@@ -3,9 +3,9 @@
 {% block content %}
 <form method="post" action="/update/{{product.id}}" enctype="multipart/form-data">
 	{% csrf_token %}
-	<input type="text" value="{{product.name}}" name="name">
-	<input type="text" value="{{product.price}}" name="price">
-	<input type="text" value="{{product.category}}" name="category">
+	<input type="text" value="{{product.name}}" name="name" required="">
+	<input type="text" value="{{product.price}}" name="price" required="">
+	<input type="text" value="{{product.category}}" name="category" required="">
 	{% load static %}
 	<img width="50px" src="{% static '/images/' %}{{product.image}}">
 

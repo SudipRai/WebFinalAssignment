@@ -36,9 +36,9 @@ def shop(request):
 def login(request):
 	return render(request,'login.html')
 
+
 def logout(request):
 	del request.session['name']
-	del request.session['password']
 	return redirect('/home')
 
 def profile(request,name="request.session.name"):
@@ -46,7 +46,6 @@ def profile(request,name="request.session.name"):
 	return render(request,'profile.html',{'customer':customer})
 
 def delete(request,id):
-	
 	customer=Customer.objects.get(id=id)
 	customer.delete()
 	return redirect('/home')

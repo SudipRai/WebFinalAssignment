@@ -16,7 +16,7 @@ def index(request):
 	users=User.objects.all()
 	return render(request,"admindetail.html",{'users':users})
 
-
+@Authenticate.valid_user
 def create(request):
 	if request.method=="POST":
 		form=UserForm(request.POST,request.FILES)

@@ -4,7 +4,7 @@ from app.models.models import Customer
 from django.contrib import messages
 from django.db.models import Q
 
-# /*------------Authentication to for Back-End------------------*/
+# /*------------Authentication to for Admin------------------*/
 class Authenticate:
 	def valid_user(function):
 		def wrap(request):
@@ -16,7 +16,7 @@ class Authenticate:
 				messages.warning(request,"Invalid email or password")
 				return redirect('/adminlogin')
 		return wrap
-# /*----------------------Authentication for Front-end------------------------*/		
+# /*----------------------Authentication for Customer------------------------*/		
 class AuthenticateC:
 	def valid_customer(function):
 		def wrap(request):
@@ -26,5 +26,7 @@ class AuthenticateC:
 				return function (request)
 			except:
 				messages.warning(request,"Invalid email or password")
+				request.session['name'] = None
+
 				return redirect('/login')
 		return wrap

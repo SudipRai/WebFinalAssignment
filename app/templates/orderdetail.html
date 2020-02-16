@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block content %}
+{% load static %}
+<table class="table" id="table">
+	<tr>
+		<thead>
+			<th>Order Id</th>
+			<th>ID</th>
+			
+			<th>Name</th>
+			<th>Quantity</th>
+			<th>Date</th>
+			
+			
+	</tr>
+	{% for order in orders %}
+	<tr>
+		<tbody>
+			<th>{{order.orderid}}</th>
+			<td>{{order.productid}}</td>
+			<td>{{order.customername}}</td>	
+			<td>{{order.quantity}}</td>
+			<td>{{order.orderdate}}</td>
+		</tbody>
+	</tr>
+	{% endfor %}
+	<script>
+	$(".dash-sidebar").find("active").removeClass("");
+		$("#order-detail").addClass("active");
+</script>
+{% endblock content %}

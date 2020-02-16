@@ -1,0 +1,70 @@
+{% extends "home.html" %}
+{% load static %}
+{% block content %}
+
+<div class="row">
+				<div class="col-md-6">
+					<div class="product-top">
+						<img width="400" height="400" src="{% static '/images/' %}{{orders.productid.image}}">
+					</div>
+				</div>
+				<div class="col-md-6">
+					<form method="post" action="/deliver/{{orders.orderid}}/{{request.session.name}}">
+						{% csrf_token %}
+					<div class="row">
+                		 <div class="col-md-3">
+            				<label>Order Item</label>
+            			</div>
+            		<div class="col-md-3">
+             			<input type="text" value="{{orders.productid.name}}" required="" readonly="">
+           			 </div>
+           			</div>
+           			 <div class="row">
+                		 <div class="col-md-3">
+            				<label>Order Price</label>
+            			</div>
+            		<div class="col-md-3">
+             			<input type="text" id="price" value="{{orders.productid.price}}" required="" readonly="">
+           			 </div>
+   				 </div>
+   				 <div class="row">
+                		 <div class="col-md-3">
+            				<label>Quantity</label>
+            			</div>
+            		<div class="col-md-3">
+             			<input type="text" id="quantiy" value="{{orders.quantity}}" required="" readonly="">
+           			 </div>
+   				 </div>
+   				  <div class="row">
+                		 <div class="col-md-3">
+            				<label>Choose Payment Option</label>
+            			</div>
+            		<div class="col-md-3">
+             			 <select id="cars" name="cars">
+    						<option value="volvo">Esewa</option>
+    						<option value="saab">Payonner</option>
+    						<option value="fiat">Paypal</option>
+    					</select>
+           			 </div>
+   				 </div>
+   				 <div class="row">
+                		 <div class="col-md-3">
+            				<label>Account Number</label>
+            			</div>
+            		<div class="col-md-3">
+             			<input type="text" value="" required="">
+           			 </div>
+   				 </div>
+   				  <button class="btn btn-info" type="submit">Place Order</button>
+   				</div>
+ 
+					
+	
+					</div>
+				</form>
+					
+				</div>
+			</div>
+			
+				
+{% endblock content %}
